@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import Link from 'next/link';
 import { getCategories } from '../services';
@@ -21,14 +22,15 @@ const Header = () => {
           </Link>
         </div>
         <div className="hidden md:float-left md:contents">
-          <head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1073971232601861"
-     crossorigin="anonymous"></script></head>
           {categories.map((category, index) => (
             <Link key={index} href={`/category/${category.slug}`}><span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">{category.name}</span></Link>
           ))}
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1073971232601861"
-     crossorigin="anonymous"></script>
         </div>
+        <Helmet>
+        {/* Add the Google AdSense script */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1073971232601861"
+          crossorigin="anonymous"></script>
+      </Helmet>
       </div>
     </div>
   );
