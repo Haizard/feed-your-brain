@@ -24,6 +24,8 @@ const Header = () => {
           {categories.map((category, index) => (
             <Link key={index} href={`/category/${category.slug}`}><span className="md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer">{category.name}</span></Link>
           ))}
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1073971232601861"
+     crossorigin="anonymous"></script>
         </div>
       </div>
     </div>
